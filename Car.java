@@ -6,15 +6,45 @@ public class Car {
     int Year;
     String Country;
 
+
     Car(String Brand, String Model, double EngineVolume, String Color, int Year, String Country) {
-        this.Brand = Brand;
-        this.Model = Model;
-        this.EngineVolume = EngineVolume;
-        this.Color = Color;
-        this.Year = Year;
-        this.Country = Country;
+        if (Brand.isEmpty() ) {
+            this.Brand = "default";
+        } else {
+            this.Brand = Brand;
+        }
+
+        if (Model.isEmpty()) {
+            this.Model = "default";
+        } else {
+            this.Model = Model;
+        }
+
+        if (EngineVolume <= 0) {
+            this.EngineVolume = 1.5;
+        } else {
+            this.EngineVolume = EngineVolume;
+        }
+
+        if (Color.isEmpty()) {
+            this.Color = "Белый";
+        } else {
+            this.Color = Color;
+        }
+        if (Year <= 0) {
+            this.Year = 2000;
+        } else {
+            this.Year = Year;
+        }
+
+        if (Country.isEmpty()) {
+            this.Country = "default";
+        } else {
+            this.Country = Country;
+        }
 
     }
+
 
     void info() {
         System.out.println("Марка автомобиля: " + Brand);
